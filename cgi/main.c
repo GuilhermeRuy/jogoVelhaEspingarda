@@ -310,7 +310,7 @@ int verificar_se_terminou( int *tabuleiro ) {
 
     // VERIFICA LINHA
     for( i = 0; i < LIN; i++ ) {
-        if( tabuleiro[LIN * i + 0] == tabuleiro[LIN * i + 1] &&
+        if( tabuleiro[ LIN * i + 0 ] && tabuleiro[LIN * i + 0] == tabuleiro[LIN * i + 1] &&
             tabuleiro[LIN * i + 0] == tabuleiro[LIN * i + 2] ) {
             return tabuleiro[LIN * i + 0];
         }
@@ -318,20 +318,20 @@ int verificar_se_terminou( int *tabuleiro ) {
 
     // VERIFICA COLUNA
     for( i = 0; i < COL; i++ ) {
-        if( tabuleiro[LIN * 0 + i] == tabuleiro[LIN * 1 + i] &&
+        if( tabuleiro[ LIN * 0 + i ] && tabuleiro[LIN * 0 + i] == tabuleiro[LIN * 1 + i] &&
             tabuleiro[LIN * 0 + i] == tabuleiro[LIN * 2 + i] ) {
             return tabuleiro[LIN * 0 + i];
         }
     }
 
     // VERIFICAR DIAGONAL SECUNDARIA
-    if( tabuleiro[LIN * 0 + 2] == tabuleiro[LIN * 1 + 1] &&
+    if( tabuleiro[ LIN * 0 + 2 ] && tabuleiro[LIN * 0 + 2] == tabuleiro[LIN * 1 + 1] &&
         tabuleiro[LIN * 0 + 2] == tabuleiro[LIN * 2 + 0] ) {
         return tabuleiro[LIN * 0 + 2];
     }
 
     // VERIFICAR DIAGONAL PRIMARIA
-    if( tabuleiro[LIN * 0 + 0] == tabuleiro[LIN * 1 + 1] &&
+    if( tabuleiro[ LIN * 0 + 0 ] && tabuleiro[LIN * 0 + 0] == tabuleiro[LIN * 1 + 1] &&
         tabuleiro[LIN * 0 + 0] == tabuleiro[LIN * 2 + 2] ) {
         return tabuleiro[LIN * 0 + 0];
     }
